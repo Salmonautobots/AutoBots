@@ -14,3 +14,4 @@ Feature: As a customer I want to sign up for news letter from homepage
       | user1@gmail.com | newsletter.thankyou |
       | user2@gmail.com | newsletter.thankyou |
 
+
