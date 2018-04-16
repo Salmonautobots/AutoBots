@@ -31,9 +31,11 @@ public class MobileHomePage extends PageObject{
         System.out.println(ls.size());
 
         for (WebElement ws : ls) {
+            String catname = ws.getText();
 
-            if (ws.getText().contains(categoryname)) {
+            if (catname.contains(categoryname)) {
                 ws.click();
+                System.out.println("success");
             }
         }
     }
