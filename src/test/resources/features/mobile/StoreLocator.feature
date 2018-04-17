@@ -1,9 +1,11 @@
 Feature: Store Locator
 
-  Scenario: Search Store
+  Scenario Outline: Search Store
   Given the user is on the home page
-  When user choses store locator
-  And search with details
-  |zipCode|Country|
-  |WD171DA|United States|
+  When user chose store locator
+  And search with details as Post Code "<postCode>"
   Then the list of the stores should be displayed
+
+    Examples:
+      |postCode|
+      |WD171DA|

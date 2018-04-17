@@ -22,7 +22,9 @@ public class MobileHomePage extends PageObject{
     private By searchIcon = By.cssSelector("i[class='fa fa-search']");
     private By productImage = By.cssSelector(".thumb-link>img");
     private By errorMessageComponent = By.cssSelector("div[class='section-header']");
+    private By storeFinderIcon = By.cssSelector("i[class='fa fa-map-marker']");
 
+    public WebElement getStoreFinderIcon(){return waitForExpectedElement(storeFinderIcon);}
     public WebElement getErrorMessageComponent(){return waitForExpectedElement(errorMessageComponent);}
     public WebElement getProductImage() {return waitForExpectedElement(productImage);}
     public WebElement getSearchIcon(){return waitForExpectedElement(searchIcon);}
