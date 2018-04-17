@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public abstract class PageObject {
-    private static final long DRIVER_WAIT_TIME = 10;
+    private static final long DRIVER_WAIT_TIME = 40;
     private static final Logger LOG = LoggerFactory.getLogger(PageObject.class);
 
     @Getter
@@ -411,6 +411,12 @@ public abstract class PageObject {
 
     public String getElementByQueryJSExecutor(String cssSelector) {
         return ((JavascriptExecutor) webDriver).executeScript("return window.getComputedStyle(document.querySelector('" + cssSelector + "')").toString();
+    }
+
+    public void mouseoverElement(WebElement wb) throws InterruptedException {
+        Thread.sleep(1500);
+        Actions builder = new Actions(webDriver);
+        builder.moveToElement(wb).build().perform();
     }
 
 }
