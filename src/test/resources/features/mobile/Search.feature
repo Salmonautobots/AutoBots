@@ -17,6 +17,6 @@ Feature: Search
       Then the "<message>" should be displayed
 
       Examples:
-        |keyword|message|
-        | |DID YOU MEAN|
-        |qqqqq|WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH:|
+        |keyword|message                                             |
+        |       |DID YOU MEAN                                        |
+        |qqqqq  |WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH:|

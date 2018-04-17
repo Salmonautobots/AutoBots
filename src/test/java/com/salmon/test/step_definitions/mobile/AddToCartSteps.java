@@ -84,5 +84,4 @@ public class AddToCartSteps {
         mobilePDPPage.selectColourOrSizeSwatch(colour);
     }
 
-
 }

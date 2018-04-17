@@ -25,6 +25,4 @@ public class StoreFinderSteps {
     public void the_list_of_the_stores_should_be_displayed() throws Exception {
 
     }
-
-
 }

@@ -20,4 +20,3 @@ Feature: Add to cart
   Examples:
     |product               |quantity|size|colour  |
     | Miko Pullover Hoodie | 2      | M  | Blue   |
-

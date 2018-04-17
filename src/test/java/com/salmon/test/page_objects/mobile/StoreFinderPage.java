@@ -6,4 +6,5 @@ import org.openqa.selenium.By;
 public class StoreFinderPage extends PageObject {
 
     private By searchComponent = By.cssSelector("#storeSearchInput");
+
 }
