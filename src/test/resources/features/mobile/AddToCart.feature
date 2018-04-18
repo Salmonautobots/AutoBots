@@ -1,5 +1,7 @@
 @regression
 Feature: Add to cart
+# Write in Story format for e.g. As a ....
+
 
   Scenario Outline: Add to cart
     Given the user is on the home page
@@ -20,3 +22,15 @@ Feature: Add to cart
   Examples:
     |product               |quantity|size|colour  |
     | Miko Pullover Hoodie | 2      | M  | Blue   |
+
+"""
+    Scenario Outline: <insert type of user and description>
+      Given the user is on the home page
+      When the user search for a product "<product name>"
+      And the user add the product to cart with "size" and "color" and "quantity"
+      Then verify the product is added to the cart
+      Examples:
+        |product               |quantity|size|colour  |
+        | Miko Pullover Hoodie | 2      | M  | Blue   |
+
+"""

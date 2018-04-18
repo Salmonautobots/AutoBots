@@ -21,7 +21,8 @@ public class SearchSteps {
 
     @When("^clicks on the search button$")
     public void clicks_on_the_search_button() throws Exception {
-        mobileHomePage.getSearchIcon().click();
+      //  mobileHomePage.getSearchIcon().click();
+        mobileHomePage.clickSearchIcon();
     }
 
     @Then("^the matching results should be displayed$")
