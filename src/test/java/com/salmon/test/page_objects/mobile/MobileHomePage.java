@@ -24,6 +24,12 @@ public class MobileHomePage extends PageObject{
     private By errorMessageComponent = By.cssSelector("div[class='section-header']");
     private By storeFinderIcon = By.cssSelector("i[class='fa fa-map-marker']");
 
+public void clickSearchIcon(){
+    waitForExpectedElement(searchIcon).click();
+    //waitForExpectedElement(searchIcon,10).click();
+}
+
+
     public WebElement getStoreFinderIcon(){return waitForExpectedElement(storeFinderIcon);}
     public WebElement getErrorMessageComponent(){return waitForExpectedElement(errorMessageComponent);}
     public WebElement getProductImage() {return waitForExpectedElement(productImage);}
@@ -42,6 +48,7 @@ public class MobileHomePage extends PageObject{
         List<WebElement> ls = webDriver.findElements((category));
         System.out.println(ls);
         System.out.println(ls.size());
+        //sys out lines should be taken out before committing the code. If you want to print something to the console use logging.
 
         for (WebElement ws : ls) {
             String catname = ws.getText();

@@ -1,11 +1,12 @@
 @regression
 Feature: Search
+# Write in Story format for e.g. As a ....
 
   Scenario Outline: Search with valid data
-
+  # General spell mistakes
     Given the user is on the home page
     When user enters valid search criteria "<ValidSearchCriteria>" in the searcfield
-    And clicks on the search button
+    #And clicks on the search button  - explicit step not required
     Then the matching results should be displayed
 
     Examples:
