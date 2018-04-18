@@ -1,3 +1,4 @@
+@regression
 Feature: Search
 
   Scenario Outline: Search with valid data

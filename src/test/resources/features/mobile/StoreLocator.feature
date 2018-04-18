@@ -1,3 +1,4 @@
+@regression
 Feature: Store Locator
 
   Scenario Outline: Search Store

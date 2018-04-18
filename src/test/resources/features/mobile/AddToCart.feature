@@ -1,6 +1,6 @@
+@regression
 Feature: Add to cart
 
-  @regression
   Scenario Outline: Add to cart
     Given the user is on the home page
 #    When user selects "<category>" category
