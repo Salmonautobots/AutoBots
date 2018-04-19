@@ -1,13 +1,16 @@
 @regression
-Feature: Store Locator
+Feature: As a user I want to navigate to the Store Locator link so that I should be able to search
+         the nearest stores for the entered post code.
+
+  Background: This is precondition for all the scenarios in this in feature file
+    Given the user is on the home page
+    And click on menu icon
 
   Scenario Outline: Search Store
-  Given the user is on the home page
-  When user chose store locator
- #combine below step with above one..
-  And search with details as Post Code "<postCode>"
+
+  When user chose store locator and search with the Post Code "<postCode>"
   Then the list of the stores should be displayed
 
     Examples:
       |postCode|
-      |WD171DA|
+      |hp19 8bu|

@@ -1,21 +1,23 @@
 @regression
-Feature: Search
-# Write in Story format for e.g. As a ....
+Feature: As a user I want to use the search component for words, sentences etc. so that I should be able to see all the contents
+         from the website matching the search criteria.
 
-  Scenario Outline: Search with valid data
-  # General spell mistakes
+  Background: This is precondition for all the scenarios in this in feature file
     Given the user is on the home page
-    When user enters valid search criteria "<ValidSearchCriteria>" in the searcfield
-    #And clicks on the search button  - explicit step not required
+    And click on menu icon
+
+  Scenario Outline: Search with valid data set
+
+    When user enters valid search criteria "<ValidSearchCriteria>" in the search field
     Then the matching results should be displayed
 
     Examples:
       |ValidSearchCriteria|
       |Jacket|
 
-    Scenario Outline: Search with Invalid search data
-      Given the user is on the home page
-      When the user searches with "<keyword>"
+    Scenario Outline: Search with Invalid search data set
+
+      When the user searches with invalid key words"<keyword>"
       Then the "<message>" should be displayed
 
       Examples:

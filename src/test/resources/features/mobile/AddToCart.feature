@@ -1,36 +1,16 @@
 @regression
-Feature: Add to cart
-# Write in Story format for e.g. As a ....
+Feature:  As a user I want to search the product, navigate to PDP page so that I can add the product into mini cart
 
-
-  Scenario Outline: Add to cart
+  Background: This is precondition for all the scenarios in this in feature file
     Given the user is on the home page
-#    When user selects "<category>" category
-    When I search the procust "<product>"
-#    And subcategory as "<subcategory>"
-#    And click on the product "<product>"
-    And select size as "<size>"
-    And select colour as "<colour>"
-    And enter quantity as "<quantity>"
-    And clicks on ADD TO CART button
-    Then the product should be added to the cart
+    And click on menu icon
 
-#    Examples:
- #     |category    |subcategory|size|quantity|product           |
-#      |WOMENS| Womens   |M   |2       | Denim Slim Skirt |
+  Scenario Outline: Search a product and add to cart
+
+    When I search the product "<product>"
+    And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
+    Then the product should be added to the cart
 
   Examples:
     |product               |quantity|size|colour  |
     | Miko Pullover Hoodie | 2      | M  | Blue   |
-
-"""
-    Scenario Outline: <insert type of user and description>
-      Given the user is on the home page
-      When the user search for a product "<product name>"
-      And the user add the product to cart with "size" and "color" and "quantity"
-      Then verify the product is added to the cart
-      Examples:
-        |product               |quantity|size|colour  |
-        | Miko Pullover Hoodie | 2      | M  | Blue   |
-
-"""

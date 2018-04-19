@@ -2,6 +2,7 @@ package com.salmon.test.framework.helpers;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -147,7 +148,7 @@ public class WebDriverHelper extends EventFiringWebDriver {
         REAL_DRIVER.manage().window().setSize(BROWSER_WINDOW_SIZE);
     }
 
-    private static void startFireFoxDriver() {
+    /*private static void startFireFoxDriver() {
         DesiredCapabilities capabilities = getFireFoxDesiredCapabilities();
 
         if (SELENIUM_HOST == null)
@@ -164,6 +165,26 @@ public class WebDriverHelper extends EventFiringWebDriver {
         }
         REAL_DRIVER.manage().window().setSize(BROWSER_WINDOW_SIZE);
     }
+*/
+    private static void startFireFoxDriver() {
+        DesiredCapabilities capabilities = getFireFoxDesiredCapabilities();
+        FirefoxProfile profile;
+        if (SELENIUM_HOST == null) {
+            profile = new FirefoxProfile();
+            profile.setPreference("network.proxy.type", 0);
+            REAL_DRIVER = new FirefoxDriver(profile);
+        }
+        else{
+            try {
+                capabilities.setPlatform(Platform.WINDOWS);
+                REAL_DRIVER = getRemoteWebDriver(capabilities);
+            } catch (MalformedURLException e) {
+                LOG.error(SELENIUM_REMOTE_URL + " Error " + e.getMessage());
+            }
+        }
+        REAL_DRIVER.manage().window().setSize(BROWSER_WINDOW_SIZE);
+    }
+
 
     private static void startPhantomJsDriver() {
         DesiredCapabilities capabilities = getPhantomJsCapabilities();
