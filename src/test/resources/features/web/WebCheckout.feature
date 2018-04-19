@@ -12,5 +12,3 @@ Feature: As a customer I can view the my basket deatils before proceeding to che
       | 4111111111111111 | 111 | 03          | 2018       |
     And  I click on place order button on review page
     Then I will be navigated to order confirmation page and successfully placed an order
-
-

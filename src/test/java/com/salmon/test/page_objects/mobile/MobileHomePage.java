@@ -1,6 +1,7 @@
 package com.salmon.test.page_objects.mobile;
 
 import com.salmon.test.framework.PageObject;
+import com.salmon.test.framework.helpers.Props;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
@@ -20,11 +21,16 @@ public class MobileHomePage extends PageObject{
     private By toggleMenu = By.cssSelector(".menu-toggle");
     private By registrationlink = By.cssSelector("a[title='Go to: Register']");
     private By arrowIcon = By.cssSelector("i[class='menu-item-toggle fa fa-chevron-right']");
+    private By loginlink = By.cssSelector("a[title='Go to: Login']");
+
 
     public void clickUserRegistrationLink(){
         waitForExpectedElement(registrationlink).click();
     }
-    public void searchString(String searchCriteria){
+
+    public void clickLoginLink(){waitForExpectedElement(loginlink).click();}
+
+     public void searchString(String searchCriteria){
         waitForExpectedElement(searchBox).sendKeys(searchCriteria);
         waitForExpectedElement(searchIcon).click();
     }
