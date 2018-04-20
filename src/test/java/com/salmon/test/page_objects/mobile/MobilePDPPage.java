@@ -32,8 +32,8 @@ public class MobilePDPPage extends PageObject {
         List<WebElement> ls = webDriver.findElements(colour_or_size_Swatch);
         for (WebElement ws : ls) {
             if (ws.getAttribute("title").contains(input)) {
-                Thread.sleep(1500);
                 ws.click();
+                Thread.sleep(5000);
                 break;
             }
         }

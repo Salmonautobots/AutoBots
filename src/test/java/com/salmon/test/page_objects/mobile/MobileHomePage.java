@@ -80,7 +80,7 @@ public class MobileHomePage extends PageObject {
 
     public void clickSearchedProduct(String productname) throws InterruptedException {
         waitForExpectedElement(searchBox).sendKeys(productname);
-        waitForExpectedElement(productSuggestion, 20).click();
+        waitForExpectedElement(productSuggestion).click();
     }
 
     public boolean checkInvalidSearchErrors(String invalidSearchCriteria) {
