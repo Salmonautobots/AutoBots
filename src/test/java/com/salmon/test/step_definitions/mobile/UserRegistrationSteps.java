@@ -11,10 +11,11 @@ public class UserRegistrationSteps {
     MobileHomePage mobileHomePage;
     CreateAccountPage createAccountPage;
 
-    public UserRegistrationSteps(MobileHomePage mobileHomePage, CreateAccountPage createAccountPage){
+    public UserRegistrationSteps(MobileHomePage mobileHomePage, CreateAccountPage createAccountPage) {
         this.mobileHomePage = mobileHomePage;
         this.createAccountPage = createAccountPage;
     }
+
     @When("^user clicks on user registration icon$")
     public void user_clicks_on_user_registration_icon() throws Throwable {
         mobileHomePage.clickUserRegistrationLink();

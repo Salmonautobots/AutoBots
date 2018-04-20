@@ -11,7 +11,8 @@ public class BrowseSteps {
     String filtercriteria;
     MobileHomePage mobileHomePage;
     MobilePLPPage mobilePLPPage;
-    public BrowseSteps(MobileHomePage mobileHomePage, MobilePLPPage mobilePLPPage){
+
+    public BrowseSteps(MobileHomePage mobileHomePage, MobilePLPPage mobilePLPPage) {
         this.mobileHomePage = mobileHomePage;
         this.mobilePLPPage = mobilePLPPage;
     }

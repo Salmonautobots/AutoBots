@@ -10,7 +10,8 @@ public class MyAccountSteps {
 
     MyAccountsPage myAccountsPage;
     MobileHomePage mobileHomePage;
-    public MyAccountSteps(MyAccountsPage myAccountsPage, MobileHomePage mobileHomePage){
+
+    public MyAccountSteps(MyAccountsPage myAccountsPage, MobileHomePage mobileHomePage) {
         this.myAccountsPage = myAccountsPage;
         this.mobileHomePage = mobileHomePage;
     }

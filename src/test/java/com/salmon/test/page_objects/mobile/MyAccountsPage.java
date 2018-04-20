@@ -17,7 +17,7 @@ public class MyAccountsPage extends PageObject {
     private By email = By.cssSelector("input[id*='customer_email']");
     private By confirmemail = By.cssSelector("input[id*='customer_emailconfirm']");
     private By applyButton = By.cssSelector("button[name*='profile_confirm']");
-    private By password =  By.cssSelector("input[id*='login_password']");
+    private By password = By.cssSelector("input[id*='login_password']");
     private By returningUserEmail = By.cssSelector("input[id*='login_username']");
     private By returningUserPassword = By.cssSelector("input[id*='login_password']");
     private By loginButton = By.cssSelector("button[name*='login_login']");
@@ -25,7 +25,7 @@ public class MyAccountsPage extends PageObject {
 
     String newsurname;
 
-    public void loginWithExistingUser(){
+    public void loginWithExistingUser() {
 /*
         String username = Props.getProp("existingusername");
         String password = Props.getProp("existingpassword");
@@ -38,20 +38,20 @@ public class MyAccountsPage extends PageObject {
         waitForExpectedElement(loginButton).click();
     }
 
-    public void selectSection(String section){
+    public void selectSection(String section) {
 
         List<WebElement> ls = webDriver.findElements(myAccountAllSections);
-        for(WebElement ws:ls){
-                if(ws.getText().contains(section)){
+        for (WebElement ws : ls) {
+            if (ws.getText().contains(section)) {
                 ws.click();
                 break;
             }
         }
     }
 
-    public void changeSurname(){
+    public void changeSurname() {
 
-        String rn =  RandomGenerator.randomAlphabetic(6);
+        String rn = RandomGenerator.randomAlphabetic(6);
         newsurname = rn;
         waitForExpectedElement(lastname).sendKeys(rn);
         waitForExpectedElement(confirmemail).sendKeys(Props.getProp("existingusername"));
@@ -59,8 +59,8 @@ public class MyAccountsPage extends PageObject {
         waitForExpectedElement(applyButton).click();
     }
 
-    public boolean confirmSurnameUpdate (){
-        if (waitForExpectedElement(myAccountHeader).getText().contains(newsurname)){
+    public boolean confirmSurnameUpdate() {
+        if (waitForExpectedElement(myAccountHeader).getText().contains(newsurname)) {
             return true;
         }
         return false;

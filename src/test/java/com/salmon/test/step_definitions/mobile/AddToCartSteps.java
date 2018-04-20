@@ -13,7 +13,7 @@ public class AddToCartSteps {
     private MobileHomePage mobileHomePage;
     private MobilePDPPage mobilePDPPage;
 
-    public AddToCartSteps(MobileHomePage mobileHomePage, MobilePDPPage mobilePDPPage){
+    public AddToCartSteps(MobileHomePage mobileHomePage, MobilePDPPage mobilePDPPage) {
         this.mobileHomePage = mobileHomePage;
         this.mobilePDPPage = mobilePDPPage;
     }
@@ -36,7 +36,7 @@ public class AddToCartSteps {
     @Then("^the product should be added to the cart$")
     public void the_product_should_be_added_to_the_cart() throws Exception {
         mobilePDPPage.mouseoverCart(mobilePDPPage.getCart());
-       Assert.assertTrue(mobilePDPPage.checkAddedProductsInMiniBasket());
+        Assert.assertTrue(mobilePDPPage.checkAddedProductsInMiniBasket());
     }
 
     @When("^add the product to the cart with size \"([^\"]*)\", colour \"([^\"]*)\" and quantity \"([^\"]*)\"$")

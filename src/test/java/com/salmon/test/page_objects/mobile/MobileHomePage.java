@@ -1,12 +1,12 @@
 package com.salmon.test.page_objects.mobile;
 
 import com.salmon.test.framework.PageObject;
-import com.salmon.test.framework.helpers.Props;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
-public class MobileHomePage extends PageObject{
+public class MobileHomePage extends PageObject {
 
     private By section = By.cssSelector(".has-sub-menu");
     private By category = By.cssSelector(".menu-vertical>li>a");
@@ -24,25 +24,27 @@ public class MobileHomePage extends PageObject{
     private By loginlink = By.cssSelector("a[title='Go to: Login']");
 
 
-    public void clickUserRegistrationLink(){
+    public void clickUserRegistrationLink() {
         waitForExpectedElement(registrationlink).click();
     }
 
-    public void clickLoginLink(){waitForExpectedElement(loginlink).click();}
+    public void clickLoginLink() {
+        waitForExpectedElement(loginlink).click();
+    }
 
-     public void searchString(String searchCriteria){
+    public void searchString(String searchCriteria) {
         waitForExpectedElement(searchBox).sendKeys(searchCriteria);
         waitForExpectedElement(searchIcon).click();
     }
 
-    public boolean checkProductImage(){
-        if(waitForExpectedElement(productImage).isDisplayed()){
+    public boolean checkProductImage() {
+        if (waitForExpectedElement(productImage).isDisplayed()) {
             return true;
         }
         return false;
     }
 
-    public void clickStoreFinderIcon(){
+    public void clickStoreFinderIcon() {
         waitForExpectedElement(storeFinderIcon).click();
     }
 
@@ -69,36 +71,36 @@ public class MobileHomePage extends PageObject{
         }
     }
 
-    public void clickSize(String size){
-        List<WebElement>ls = webDriver.findElements((productsize));
-        for(WebElement ws:ls){
+    public void clickSize(String size) {
+        List<WebElement> ls = webDriver.findElements((productsize));
+        for (WebElement ws : ls) {
         }
 
     }
 
     public void clickSearchedProduct(String productname) throws InterruptedException {
         waitForExpectedElement(searchBox).sendKeys(productname);
-        waitForExpectedElement(productSuggestion,20).click();
+        waitForExpectedElement(productSuggestion, 20).click();
     }
 
-    public boolean checkInvalidSearchErrors(String invalidSearchCriteria){
-        if (invalidSearchCriteria.isEmpty()){
-                if(waitForExpectedElement(errorMessageComponent).getText().contains("WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH: ENTER KEYWORD OR ITEM NO.")){
-                    return true;
-                }
-                return false;
+    public boolean checkInvalidSearchErrors(String invalidSearchCriteria) {
+        if (invalidSearchCriteria.isEmpty()) {
+            if (waitForExpectedElement(errorMessageComponent).getText().contains("WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH: ENTER KEYWORD OR ITEM NO.")) {
+                return true;
             }
-            if (!invalidSearchCriteria.isEmpty()){
+            return false;
+        }
+        if (!invalidSearchCriteria.isEmpty()) {
 
-                if (waitForExpectedElement(errorMessageComponent).getText().contains("WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH:")){
-                    return true;
-                }
-                return false;
+            if (waitForExpectedElement(errorMessageComponent).getText().contains("WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH:")) {
+                return true;
+            }
+            return false;
         }
         return false;
     }
 
-    public void clickToggleMenuClick(){
+    public void clickToggleMenuClick() {
         waitForExpectedElement(toggleMenu).click();
     }
 }

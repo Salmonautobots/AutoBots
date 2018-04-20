@@ -4,6 +4,7 @@ import com.salmon.test.framework.PageObject;
 import com.salmon.test.framework.helpers.utils.RandomGenerator;
 import cucumber.api.DataTable;
 import org.openqa.selenium.By;
+
 import java.util.List;
 
 public class CreateAccountPage extends PageObject {

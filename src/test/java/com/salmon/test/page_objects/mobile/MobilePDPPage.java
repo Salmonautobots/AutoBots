@@ -3,6 +3,7 @@ package com.salmon.test.page_objects.mobile;
 import com.salmon.test.framework.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 
@@ -22,6 +23,7 @@ public class MobilePDPPage extends PageObject {
     public void addToBag() {
         elementToBeClickable(addToCartButton).click();
     }
+
     public WebElement getCart() {
         return waitForExpectedElement(cart);
     }
@@ -38,7 +40,7 @@ public class MobilePDPPage extends PageObject {
     }
 
     public void mouseoverCart(WebElement wb) throws InterruptedException {
-            mouseoverElement(wb);
+        mouseoverElement(wb);
     }
 
     public boolean checkAddedProductsInMiniBasket() {

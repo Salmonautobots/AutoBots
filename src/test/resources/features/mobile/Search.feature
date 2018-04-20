@@ -1,6 +1,6 @@
 @regression
 Feature: As a user I want to use the search component for words, sentences etc. so that I should be able to see all the contents
-         from the website matching the search criteria.
+  from the website matching the search criteria.
 
   Background: This is precondition for all the scenarios in this in feature file
     Given the user is on the home page
@@ -12,15 +12,15 @@ Feature: As a user I want to use the search component for words, sentences etc. 
     Then the matching results should be displayed
 
     Examples:
-      |ValidSearchCriteria|
-      |Jacket|
+      | ValidSearchCriteria |
+      | Jacket              |
 
-    Scenario Outline: Search with Invalid search data set
+  Scenario Outline: Search with Invalid search data set
 
-      When the user searches with invalid key words"<keyword>"
-      Then the "<message>" should be displayed
+    When the user searches with invalid key words"<keyword>"
+    Then the "<message>" should be displayed
 
-      Examples:
-        |keyword|message                                             |
-        |       |DID YOU MEAN                                        |
-        |qqqqq  |WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH:|
+    Examples:
+      | keyword | message                                              |
+      |         | DID YOU MEAN                                         |
+      | qqqqq   | WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH: |

@@ -11,6 +11,6 @@ Feature:  As a user I want to search the product, navigate to PDP page so that I
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
     Then the product should be added to the cart
 
-  Examples:
-    |product               |quantity|size|colour  |
-    | Miko Pullover Hoodie | 2      | M  | Blue   |
+    Examples:
+      | product              | quantity | size | colour |
+      | Miko Pullover Hoodie | 2        | M    | Blue   |

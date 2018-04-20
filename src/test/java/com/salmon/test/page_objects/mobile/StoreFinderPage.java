@@ -12,7 +12,7 @@ public class StoreFinderPage extends PageObject {
     private By searchButton = By.cssSelector("#postcodeSearchSubmit");
     private By addressContainer = By.cssSelector("#resultContainer>li>article>address");
 
-    public void searchStore(String postcode){
+    public void searchStore(String postcode) {
         waitForExpectedElement(searchComponent).sendKeys(postcode);
         waitForExpectedElement(searchButton).click();
     }
@@ -23,7 +23,7 @@ public class StoreFinderPage extends PageObject {
         List<WebElement> ls = webDriver.findElements(addressContainer);
         for (WebElement lst : ls) {
 
-            if(lst.getText().toLowerCase().contains(postcode)){
+            if (lst.getText().toLowerCase().contains(postcode)) {
                 return true;
             }
         }

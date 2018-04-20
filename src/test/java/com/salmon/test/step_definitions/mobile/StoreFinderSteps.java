@@ -12,9 +12,10 @@ public class StoreFinderSteps {
     StoreFinderPage storeFinderPage;
 
     String postcode;
-    public StoreFinderSteps(MobileHomePage mobileHomePage,StoreFinderPage storeFinderPage){
+
+    public StoreFinderSteps(MobileHomePage mobileHomePage, StoreFinderPage storeFinderPage) {
         this.mobileHomePage = mobileHomePage;
-        this.storeFinderPage =storeFinderPage;
+        this.storeFinderPage = storeFinderPage;
     }
 
     @When("^user chose store locator and search with the Post Code \"([^\"]*)\"$")
@@ -22,7 +23,7 @@ public class StoreFinderSteps {
         this.postcode = postcode;
         mobileHomePage.clickStoreFinderIcon();
         storeFinderPage.searchStore(postcode);
-        }
+    }
 
     @Then("^the list of the stores should be displayed$")
     public void the_list_of_the_stores_should_be_displayed() throws Exception {

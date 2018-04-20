@@ -10,7 +10,8 @@ import org.junit.Assert;
 public class SearchSteps {
 
     MobileHomePage mobileHomePage;
-    public SearchSteps(MobileHomePage mobileHomePage){
+
+    public SearchSteps(MobileHomePage mobileHomePage) {
         this.mobileHomePage = mobileHomePage;
     }
 
@@ -28,6 +29,7 @@ public class SearchSteps {
     public void the_user_searches_with_invalid_key_words(String invalidsearch) throws Exception {
         mobileHomePage.searchString(invalidsearch);
     }
+
     @Then("^the \"([^\"]*)\" should be displayed$")
     public void the_should_be_displayed(String invalidSearchString) throws Exception {
         Assert.assertTrue(mobileHomePage.checkInvalidSearchErrors(invalidSearchString));
