@@ -3,6 +3,7 @@ Feature: As a customer I can view the my basket deatils before proceeding to che
   Background:
     Given I navigate to the Project "Home" page
 
+
   Scenario: As a user I can able to place order with payment type as Card
     When I as an existing customer is on basket page with products to checkout
     And  I click on the Checkout securely button

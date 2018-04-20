@@ -6,6 +6,8 @@ Feature: As a guest user, I want to register myself so that I should be able to 
 
     Scenario: Register the user by adding the data into mandatory fields
 
-      When I click on Register link
-      And enter the values in the below fields
-      Then user should be registered successfully
+      When user clicks on user registration icon
+      And  user enters the registration details
+        |First Name|Last Name|Password    |
+        |Jack      |Wills    |Salmon$1234 |
+      Then user should be registered successfully and My Account page should be displayed
