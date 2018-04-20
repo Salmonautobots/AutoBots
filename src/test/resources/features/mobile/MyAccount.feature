@@ -1,3 +1,4 @@
+@regression
 Feature: As a registered user, I want to login and navigate to My Account page so that I should be able to update
   the personal details
 

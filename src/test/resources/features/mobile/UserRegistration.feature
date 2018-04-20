@@ -1,3 +1,4 @@
+@regression
 Feature: As a guest user, I want to register myself so that I should be able to access the site as a registered user
 
   Background: This is precondition for all the scenarios in this in feature file
