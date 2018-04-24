@@ -27,6 +27,8 @@ public class UrlBuilder {
     }
 
     public static void startAtHomePage() {
+        WebDriverHelper.getWebDriver().manage().deleteAllCookies();
+        WebDriverHelper.getWebDriver().navigate().refresh();
         WebDriverHelper.getWebDriver().navigate().to((basePath));
     }
 

@@ -79,4 +79,17 @@ public class CheckoutSteps {
     public void theOrderShouldBeSuccessfullyPlaced() throws Exception {
         orderConfirmationPage.orderNumberPrint();
     }
+
+    @And("^click Checkout as Guest button$")
+    public void clickCheckoutAsGuestButton() throws Exception {
+        pickAPathPage.clickCheckoutAsGuestButton();
+    }
+
+    @And("^enter email address and credit card details on the billing address page and click continue$")
+    public void enterEmalAddressAndCreditCardDetailsOnTheBillingAddressPageAndClickContinue(DataTable creditCardDetails) throws Exception {
+        billingAddressPage.enterEmailAndCreditCardDetails(creditCardDetails);
+        billingAddressPage.clickPlaceOrder();
+
+
+    }
 }

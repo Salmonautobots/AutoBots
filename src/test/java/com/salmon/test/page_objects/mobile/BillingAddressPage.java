@@ -18,6 +18,7 @@ public class BillingAddressPage extends PageObject {
     private By cardExpirationYear = By.cssSelector("select[id*='expiration_year']");
     private By cardSecurityCode = By.cssSelector("input[id*='cvn']");
     private By continueToPlaceOrderButton = By.cssSelector(".button-fancy-large");
+    private By email = By.cssSelector("input[id*='emailAddress']");
 
     public void selectCreditCard() throws InterruptedException {
         Thread.sleep(3500);
@@ -46,7 +47,19 @@ public class BillingAddressPage extends PageObject {
         waitForExpectedElement(continueToPlaceOrderButton).click();
 
     }
+    public void enterEmailAndCreditCardDetails(DataTable dt){
 
+        List<List<String>> ls = dt.raw();
+        waitForExpectedElement(nameOnCard).sendKeys(ls.get(1).get(0));
+        waitForExpectedElement(type).sendKeys(ls.get(1).get(1));
+        waitForExpectedElement(cardNumber).sendKeys(ls.get(1).get(2));
+        waitForExpectedElement(cardExpirationMonth).sendKeys(ls.get(1).get(3));
+        waitForExpectedElement(cardExpirationYear).sendKeys(ls.get(1).get(4));
+        waitForExpectedElement(cardSecurityCode).sendKeys(ls.get(1).get(5));
+        waitForExpectedElement(email).sendKeys(ls.get(1).get(6));
+        waitForExpectedElement(continueToPlaceOrderButton).click();
+
+    }
     public void clickPlaceOrder() throws InterruptedException {
 
         Thread.sleep(2500);

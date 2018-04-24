@@ -1,3 +1,4 @@
+@regression2
 Feature: As a user, I want to select the goods and make a payment so that the order should be successfully placed
 
   Background: User has to be on the main page and clicked on the menu icon.
@@ -5,7 +6,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
     Given the user is on the home page
     And click on menu icon
 
-  Scenario Outline: Purchase a product as a registered user
+  Scenario Outline: 1. Purchase a product as a registered user
 
  #     When login with an existing credentials
     When I search the product "<product>"
@@ -19,7 +20,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-  Scenario Outline: Purchase a product as a new user
+  Scenario Outline: 2. Purchase a product as a newly registered user during the purchase journey
 
     When I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
@@ -42,3 +43,21 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
+
+  Scenario Outline: 3. Purchase a product as a guest user
+    When I search the product "<product>"
+    And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
+    And navigate to Full Cart page
+    And I click on the Checkout button from the full cart
+    And click Checkout as Guest button
+    And enter shipping address
+      | First Name | Last Name | Address1           | City    | PostCode | Phone        |
+      | Test       | Tester    | 64, Clarendon Road | Watford | WD17 1DA | 01923 320000 |
+    And enter email address and credit card details on the billing address page and click continue
+      | Name on Card | Type | Number           | Expiry Month | Expiry Date | Security Code | Email           |
+      | CreditTest   | Visa | 4111111111111111 | December     | 2022        | 224           | test@tester.com |
+
+    Then the order should be successfully placed
+    Examples:
+      | product              | quantity | size | colour |
+      | Miko Pullover Hoodie | 2        | M    | Blue   |

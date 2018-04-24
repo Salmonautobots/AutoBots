@@ -2,7 +2,10 @@ package com.salmon.test.page_objects.mobile;
 
 import com.salmon.test.framework.PageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -17,7 +20,11 @@ public class MobilePDPPage extends PageObject {
     private By productName = By.cssSelector(".product-name");
     private By viewCart = By.cssSelector(".button.mini-cart-link-cart");
 
-    public void addQuantity(String totalquantity) {
+
+    public void addQuantity(String totalquantity) throws InterruptedException {
+   /*     waitForExpectedElement(quantity).click();
+        Actions actions = new Actions(webDriver);
+        actions.keyDown(Keys.CONTROL).sendKeys("a").build().perform();*/
         waitForExpectedElement(quantity).sendKeys(totalquantity);
     }
 
