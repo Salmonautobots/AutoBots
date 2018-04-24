@@ -7,7 +7,8 @@ Feature:  As a user I want to search the product, navigate to PDP page so that I
 
   Scenario Outline: Search a product and add to cart
 
-    When I search the product "<product>"
+    When login with an existing credentials
+    And I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
     Then the product should be added to the cart
 

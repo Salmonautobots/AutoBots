@@ -15,6 +15,7 @@ public class MobilePDPPage extends PageObject {
     private By cart = By.cssSelector(".minicart-icon.fa.fa-shopping-cart");
     private By productMiniCartName = By.cssSelector(".mini-cart-name>a");
     private By productName = By.cssSelector(".product-name");
+    private By viewCart = By.cssSelector(".button.mini-cart-link-cart");
 
     public void addQuantity(String totalquantity) {
         waitForExpectedElement(quantity).sendKeys(totalquantity);
@@ -48,5 +49,9 @@ public class MobilePDPPage extends PageObject {
             return true;
         }
         return false;
+    }
+
+    public void clickViewCart(){
+        waitForExpectedElement(viewCart).click();
     }
 }

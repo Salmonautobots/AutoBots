@@ -26,15 +26,8 @@ public class MyAccountsPage extends PageObject {
     String newsurname;
 
     public void loginWithExistingUser() {
-/*
-        String username = Props.getProp("existingusername");
-        String password = Props.getProp("existingpassword");
-*/
-
-        //waitForExpectedElement(returningUserEmail).sendKeys(Props.getProp("existingusername"));
-        //waitForExpectedElement(returningUserPassword).sendKeys(Props.getProp("existingpassword"));
-        waitForExpectedElement(returningUserEmail).sendKeys("ydeo@salmon.com");
-        waitForExpectedElement(returningUserPassword).sendKeys("Salmon$123");
+        waitForExpectedElement(returningUserEmail).sendKeys(Props.getProp("existingusername"));
+        waitForExpectedElement(returningUserPassword).sendKeys(Props.getProp("existingpassword"));
         waitForExpectedElement(loginButton).click();
     }
 
@@ -51,9 +44,9 @@ public class MyAccountsPage extends PageObject {
 
     public void changeSurname() {
 
-        String rn = RandomGenerator.randomAlphabetic(6);
-        newsurname = rn;
-        waitForExpectedElement(lastname).sendKeys(rn);
+        String randomlastname = RandomGenerator.randomAlphabetic(6);
+        newsurname = randomlastname;
+        waitForExpectedElement(lastname).sendKeys(randomlastname);
         waitForExpectedElement(confirmemail).sendKeys(Props.getProp("existingusername"));
         waitForExpectedElement(password).sendKeys(Props.getProp("existingpassword"));
         waitForExpectedElement(applyButton).click();

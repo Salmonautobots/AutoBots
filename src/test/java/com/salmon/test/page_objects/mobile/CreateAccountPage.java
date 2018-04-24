@@ -17,12 +17,14 @@ public class CreateAccountPage extends PageObject {
     private By confirmpassword = By.cssSelector("input[id*='login_passwordconfirm']");
     private By applyButton = By.cssSelector("button[name*='profile_confirm']");
     private By myAccountHeader = By.cssSelector("#primary>h1");
+    String userFirstname;
 
     public void registerUser(DataTable dt) {
 
         List<List<String>> ls = dt.raw();
         System.out.println(ls);
-
+        userFirstname = ls.get(1).get(0);
+        waitForExpectedElement(firstname).sendKeys(ls.get(1).get(0));
         waitForExpectedElement(firstname).sendKeys(ls.get(1).get(0));
         waitForExpectedElement(lastname).sendKeys(ls.get(1).get(1));
         String emailadd = RandomGenerator.randomEmailAddress(20);
@@ -36,9 +38,11 @@ public class CreateAccountPage extends PageObject {
     public boolean myAccountNavigate() {
 
         if (waitForExpectedElement(myAccountHeader).isDisplayed()) {
-            return true;
+            if (waitForExpectedElement(myAccountHeader).getText().contains(userFirstname)) {
+                return true;
+            }
+            return false;
         }
         return false;
     }
-
 }
