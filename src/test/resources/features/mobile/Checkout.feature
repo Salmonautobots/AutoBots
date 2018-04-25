@@ -1,11 +1,10 @@
-@regression2
 Feature: As a user, I want to select the goods and make a payment so that the order should be successfully placed
 
-  Background: User has to be on the main page and clicked on the menu icon.
+    Background: User has to be on the main page and clicked on the menu icon.
 
     Given the user is on the home page
     And click on menu icon
-
+  @regression2
   Scenario Outline: 1. Purchase a product as a registered user
 
  #     When login with an existing credentials
@@ -20,6 +19,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
+  @regression
   Scenario Outline: 2. Purchase a product as a newly registered user during the purchase journey
 
     When I search the product "<product>"
@@ -43,7 +43,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-
+  @regression
   Scenario Outline: 3. Purchase a product as a guest user
     When I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"

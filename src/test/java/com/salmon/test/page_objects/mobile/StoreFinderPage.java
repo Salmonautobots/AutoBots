@@ -18,8 +18,8 @@ public class StoreFinderPage extends PageObject {
     }
 
     public boolean storeResultsCheck(String postcode) throws InterruptedException {
-        System.out.println(postcode);
         Thread.sleep(2000);
+        waitForExpectedElement(addressContainer);
         List<WebElement> ls = webDriver.findElements(addressContainer);
         for (WebElement lst : ls) {
 
