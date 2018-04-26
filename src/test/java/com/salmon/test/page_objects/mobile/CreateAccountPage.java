@@ -25,7 +25,6 @@ public class CreateAccountPage extends PageObject {
         System.out.println(ls);
         userFirstname = ls.get(1).get(0);
         waitForExpectedElement(firstname).sendKeys(ls.get(1).get(0));
-        waitForExpectedElement(firstname).sendKeys(ls.get(1).get(0));
         waitForExpectedElement(lastname).sendKeys(ls.get(1).get(1));
         String emailadd = RandomGenerator.randomEmailAddress(20);
         waitForExpectedElement(email).sendKeys(emailadd);

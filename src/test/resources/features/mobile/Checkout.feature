@@ -4,7 +4,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
 
     Given the user is on the home page
     And click on menu icon
-  @regression2
+  @regression
   Scenario Outline: 1. Purchase a product as a registered user
 
  #     When login with an existing credentials
@@ -14,12 +14,14 @@ Feature: As a user, I want to select the goods and make a payment so that the or
     And I click on the Checkout button from the full cart
     And login with an existing credentials on the pick a path page
     And select the credit card from the option
+    And enter cvn code
+    Then the order should be successfully placed
 
     Examples:
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-  @regression
+  @regression2
   Scenario Outline: 2. Purchase a product as a newly registered user during the purchase journey
 
     When I search the product "<product>"
@@ -43,7 +45,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-  @regression
+  @regression2
   Scenario Outline: 3. Purchase a product as a guest user
     When I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"

@@ -20,6 +20,7 @@ public class BillingAddressPage extends PageObject {
     private By continueToPlaceOrderButton = By.cssSelector(".button-fancy-large");
     private By email = By.cssSelector("input[id*='emailAddress']");
 
+    public String cvnnumber;
     public void selectCreditCard() throws InterruptedException {
         Thread.sleep(3500);
       List<WebElement>list = webDriver.findElement(selectCreditCard).findElements(By.tagName("option"));
@@ -42,8 +43,10 @@ public class BillingAddressPage extends PageObject {
         waitForExpectedElement(type).sendKeys(ls.get(1).get(1));
         waitForExpectedElement(cardNumber).sendKeys(ls.get(1).get(2));
         waitForExpectedElement(cardExpirationMonth).sendKeys(ls.get(1).get(3));
-        waitForExpectedElement(cardExpirationYear).sendKeys(ls.get(1).get(4));
-        waitForExpectedElement(cardSecurityCode).sendKeys(ls.get(1).get(5));
+        waitForExpectedElement(cardExpirationYear).sendKeys(ls.get(1).get(4));;
+        this.cvnnumber = ls.get(1).get(5);
+        System.out.println(cvnnumber);
+        waitForExpectedElement(cardSecurityCode).sendKeys(cvnnumber);
         waitForExpectedElement(continueToPlaceOrderButton).click();
 
     }
@@ -66,4 +69,8 @@ public class BillingAddressPage extends PageObject {
         waitForExpectedElement(continueToPlaceOrderButton).click();
     }
 
+    public void placeOrderFromCheckoutPage(){
+        waitForExpectedElement(cardSecurityCode).sendKeys("255");
+        waitForExpectedElement(continueToPlaceOrderButton).click();
+    }
 }

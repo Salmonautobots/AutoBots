@@ -13,4 +13,4 @@ Feature:  As a user I want to search the product, navigate to PDP page so that I
 
     Examples:
       | product              | quantity | size | colour |
-      | Miko Pullover Hoodie | 4        | M    | Blue   |
+      | Miko Pullover Hoodie | 1        | M    | Blue   |

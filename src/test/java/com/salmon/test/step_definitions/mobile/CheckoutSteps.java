@@ -92,4 +92,10 @@ public class CheckoutSteps {
 
 
     }
+
+    @And("^enter cvn code$")
+    public void ienter_cvn_code() throws Exception {
+        billingAddressPage.placeOrderFromCheckoutPage();
+        billingAddressPage.clickPlaceOrder();
+    }
 }

@@ -22,9 +22,7 @@ public class MobilePDPPage extends PageObject {
 
 
     public void addQuantity(String totalquantity) throws InterruptedException {
-   /*     waitForExpectedElement(quantity).click();
-        Actions actions = new Actions(webDriver);
-        actions.keyDown(Keys.CONTROL).sendKeys("a").build().perform();*/
+        waitForExpectedElement(quantity).clear();
         waitForExpectedElement(quantity).sendKeys(totalquantity);
     }
 
