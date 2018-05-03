@@ -1,6 +1,8 @@
 package com.salmon.test.page_objects.mobile;
 
 import com.salmon.test.framework.PageObject;
+import com.salmon.test.models.cucumber.AddressModel;
+import com.salmon.test.models.cucumber.CreditCardModel;
 import cucumber.api.DataTable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -50,6 +52,18 @@ public class BillingAddressPage extends PageObject {
         waitForExpectedElement(continueToPlaceOrderButton).click();
 
     }
+
+    public void enterCreditCardDetails1(CreditCardModel creditCardModel){
+
+        waitForExpectedElement(nameOnCard).sendKeys(creditCardModel.getCardName());
+        waitForExpectedElement(type).sendKeys(creditCardModel.getType());
+        waitForExpectedElement(cardNumber).sendKeys(creditCardModel.getNumber());
+        waitForExpectedElement(cardExpirationMonth).sendKeys(creditCardModel.getExpiryMonth());
+        waitForExpectedElement(cardExpirationYear).sendKeys(creditCardModel.getExpiryYear());
+        waitForExpectedElement(cardSecurityCode).sendKeys(creditCardModel.getSecurityCode());
+        waitForExpectedElement(continueToPlaceOrderButton).click();
+    }
+
     public void enterEmailAndCreditCardDetails(DataTable dt){
 
         List<List<String>> ls = dt.raw();
@@ -59,10 +73,16 @@ public class BillingAddressPage extends PageObject {
         waitForExpectedElement(cardExpirationMonth).sendKeys(ls.get(1).get(3));
         waitForExpectedElement(cardExpirationYear).sendKeys(ls.get(1).get(4));
         waitForExpectedElement(cardSecurityCode).sendKeys(ls.get(1).get(5));
-        waitForExpectedElement(email).sendKeys(ls.get(1).get(6));
+
         waitForExpectedElement(continueToPlaceOrderButton).click();
 
     }
+
+    public void enterEmailAddress(DataTable emailaddress){
+        List<List<String>> emailadd = emailaddress.raw();
+        waitForExpectedElement(email).sendKeys(emailadd.get(1).get(0));
+    }
+
     public void clickPlaceOrder() throws InterruptedException {
 
         Thread.sleep(2500);

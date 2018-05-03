@@ -1,11 +1,16 @@
 package com.salmon.test.step_definitions.mobile;
 
+import com.salmon.test.models.cucumber.AddressModel;
+import com.salmon.test.models.cucumber.CardDeatilsModel;
+import com.salmon.test.models.cucumber.CreditCardModel;
 import com.salmon.test.page_objects.mobile.*;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.util.List;
 
 public class CheckoutSteps {
 
@@ -19,7 +24,7 @@ public class CheckoutSteps {
     OrderConfirmationPage orderConfirmationPage;
 
 
-    public CheckoutSteps(MobilePDPPage mobilePDPPage,FullCartPage fullCartPage,BillingAddressPage billingAddressPage,MyAccountsPage myAccountsPage,ShippingAddressPage shippingAddressPage, PickAPathPage pickAPathPage,CreateAccountPage createAccountPage,OrderConfirmationPage orderConfirmationPage){
+    public CheckoutSteps(MobilePDPPage mobilePDPPage, FullCartPage fullCartPage, BillingAddressPage billingAddressPage, MyAccountsPage myAccountsPage, ShippingAddressPage shippingAddressPage, PickAPathPage pickAPathPage, CreateAccountPage createAccountPage, OrderConfirmationPage orderConfirmationPage) {
 
         this.mobilePDPPage = mobilePDPPage;
         this.fullCartPage = fullCartPage;
@@ -61,18 +66,23 @@ public class CheckoutSteps {
     }
 
     @And("^enter shipping address$")
-    public void enterShippingAddress(DataTable newUserDetails) throws Exception {
-        shippingAddressPage.enterNewUserDetails(newUserDetails);
+    public void enterShippingAddress(List<AddressModel> addressModel1) throws Exception {
+
+        for (AddressModel addressModel : addressModel1) {
+            shippingAddressPage.enterDataModelNewUserDetails(addressModel);
+        }
+
         shippingAddressPage.checkUseThisAddressForBilingCheckBox();
         shippingAddressPage.selectContinueToBillingButton();
     }
 
     @And("^enter credit card details on the billing address page and click continue$")
-    public void enterCreditCardDetailsOnTheBillingAddressPageAndClickContinue(DataTable credicCardDetails) throws Exception {
-        billingAddressPage.enterCreditCardDetails(credicCardDetails);
+    public void enterCreditCardDetailsOnTheBillingAddressPageAndClickContinue(List<CreditCardModel> creditCardModels) throws Exception {
+
+        for (CreditCardModel creditCardModel : creditCardModels) {
+            billingAddressPage.enterCreditCardDetails1(creditCardModel);
+        }
         billingAddressPage.clickPlaceOrder();
-
-
     }
 
     @Then("^the order should be successfully placed$")
@@ -85,17 +95,14 @@ public class CheckoutSteps {
         pickAPathPage.clickCheckoutAsGuestButton();
     }
 
-    @And("^enter email address and credit card details on the billing address page and click continue$")
-    public void enterEmalAddressAndCreditCardDetailsOnTheBillingAddressPageAndClickContinue(DataTable creditCardDetails) throws Exception {
-        billingAddressPage.enterEmailAndCreditCardDetails(creditCardDetails);
-        billingAddressPage.clickPlaceOrder();
-
-
-    }
-
     @And("^enter cvn code$")
     public void ienter_cvn_code() throws Exception {
         billingAddressPage.placeOrderFromCheckoutPage();
         billingAddressPage.clickPlaceOrder();
+    }
+
+    @And("^enter email address$")
+    public void enterEmailAddress(DataTable email) throws Exception {
+        billingAddressPage.enterEmailAddress(email);
     }
 }

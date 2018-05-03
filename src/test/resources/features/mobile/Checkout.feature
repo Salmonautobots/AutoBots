@@ -1,9 +1,10 @@
 Feature: As a user, I want to select the goods and make a payment so that the order should be successfully placed
 
-    Background: User has to be on the main page and clicked on the menu icon.
+  Background: User has to be on the main page and clicked on the menu icon.
 
     Given the user is on the home page
     And click on menu icon
+
   @regression
   Scenario Outline: 1. Purchase a product as a registered user
 
@@ -32,8 +33,8 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | First Name | Last Name | Password    |
       | Jack       | Wills     | Salmon$1234 |
     And enter shipping address
-      | First Name | Last Name | Address1           | City    | PostCode | Phone        |
-      | Test       | Tester    | 64, Clarendon Road | Watford | WD17 1DA | 01923 320000 |
+      | Firstname | Lastname | Address1           | City    | PostCode | Phone        |
+      | Test      | Tester   | 64, Clarendon Road | Watford | WD17 1DA | 01923 320000 |
 
     And enter credit card details on the billing address page and click continue
       | Name on Card | Type | Number           | Expiry Month | Expiry Date | Security Code |
@@ -55,9 +56,14 @@ Feature: As a user, I want to select the goods and make a payment so that the or
     And enter shipping address
       | First Name | Last Name | Address1           | City    | PostCode | Phone        |
       | Test       | Tester    | 64, Clarendon Road | Watford | WD17 1DA | 01923 320000 |
-    And enter email address and credit card details on the billing address page and click continue
-      | Name on Card | Type | Number           | Expiry Month | Expiry Date | Security Code | Email           |
-      | CreditTest   | Visa | 4111111111111111 | December     | 2022        | 224           | test@tester.com |
+
+    And enter email address
+      | Email           |
+      | test@tester.com |
+
+    And enter credit card details on the billing address page and click continue
+      | Card Name  | Type | Number           | Expiry Month | Expiry Year | Security Code |
+      | CreditTest | Visa | 4111111111111111 | December     | 2022        | 224           |
 
     Then the order should be successfully placed
     Examples:

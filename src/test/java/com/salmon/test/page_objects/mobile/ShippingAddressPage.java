@@ -1,11 +1,10 @@
 package com.salmon.test.page_objects.mobile;
 
 import com.salmon.test.framework.PageObject;
-import com.salmon.test.framework.helpers.utils.RandomGenerator;
-import cucumber.api.DataTable;
+import com.salmon.test.models.cucumber.AddressModel;
 import org.openqa.selenium.By;
 
-import java.util.List;
+
 
 public class ShippingAddressPage extends PageObject {
 
@@ -20,29 +19,26 @@ public class ShippingAddressPage extends PageObject {
     private By firstname = By.cssSelector("input[id*='firstName']");
     private By lastname = By.cssSelector("input[id*='lastName']");
 
-    public void setSelectAddressType(){
+    public void setSelectAddressType() {
         waitForExpectedElement(selectMainAddress).click();
     }
 
-    public void selectContinueToBillingButton(){
+    public void selectContinueToBillingButton() {
         waitForExpectedElement(continueToBillingButton).click();
     }
 
-    public void checkUseThisAddressForBilingCheckBox(){
+    public void checkUseThisAddressForBilingCheckBox() {
         waitForExpectedElement(useThisAddressForBilingCheckBox).click();
     }
 
-    public void enterNewUserDetails(DataTable dt){
+    public void enterDataModelNewUserDetails(AddressModel addressModel) {
 
-        List<List<String>> ls = dt.raw();
-        waitForExpectedElement(firstname).sendKeys(ls.get(1).get(0));
-        waitForExpectedElement(lastname).sendKeys(ls.get(1).get(1));
-        waitForExpectedElement(address1).sendKeys(ls.get(1).get(2));
-        waitForExpectedElement(city).sendKeys(ls.get(1).get(3));
-        waitForExpectedElement(postcode).sendKeys(ls.get(1).get(4));
-        waitForExpectedElement(phone).sendKeys(ls.get(1).get(5));
-
+        waitForExpectedElement(firstname).sendKeys(addressModel.getFirstName());
+        waitForExpectedElement(lastname).sendKeys(addressModel.getLastName());
+        waitForExpectedElement(address1).sendKeys(addressModel.getAddress1());
+        waitForExpectedElement(city).sendKeys(addressModel.getCity());
+        waitForExpectedElement(postcode).sendKeys(addressModel.getPostCode());
+        waitForExpectedElement(phone).sendKeys(addressModel.getPhone());
     }
-
 
 }
