@@ -1,3 +1,4 @@
+@regression
 Feature: As a user, I want to select the goods and make a payment so that the order should be successfully placed
 
   Background: User has to be on the main page and clicked on the menu icon.
