@@ -9,6 +9,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -87,7 +88,7 @@ public class CheckoutSteps {
 
     @Then("^the order should be successfully placed$")
     public void theOrderShouldBeSuccessfullyPlaced() throws Exception {
-        orderConfirmationPage.orderNumberPrint();
+        Assert.assertTrue(orderConfirmationPage.orderNumberPrint());
     }
 
     @And("^click Checkout as Guest button$")

@@ -7,11 +7,13 @@ public class OrderConfirmationPage extends PageObject {
 
     private By ordernumberSection = By.cssSelector("h1[class='order-number']");
 
-    public void orderNumberPrint() throws InterruptedException {
+    public boolean orderNumberPrint() throws InterruptedException {
 
-        System.out.println(waitForExpectedElement(ordernumberSection).findElement(By.cssSelector(".value")).getText());
-
+        if (waitForExpectedElement(ordernumberSection).findElement(By.cssSelector(".value")).getText().isEmpty()){
+            return false;
+        }
         Thread.sleep(300000);
+        return true;
     }
 
 }

@@ -33,11 +33,11 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | First Name | Last Name | Password    |
       | Jack       | Wills     | Salmon$1234 |
     And enter shipping address
-      | Firstname | Lastname | Address1           | City    | PostCode | Phone        |
+      | First Name | Last Name | Address1           | City    | PostCode | Phone        |
       | Test      | Tester   | 64, Clarendon Road | Watford | WD17 1DA | 01923 320000 |
 
     And enter credit card details on the billing address page and click continue
-      | Name on Card | Type | Number           | Expiry Month | Expiry Date | Security Code |
+      | Card Name  | Type | Number           | Expiry Month | Expiry Year | Security Code |
       | CreditTest   | Visa | 4111111111111111 | December     | 2022        | 224           |
 
     Then the order should be successfully placed

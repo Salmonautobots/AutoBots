@@ -21,6 +21,7 @@ public class BillingAddressPage extends PageObject {
     private By cardSecurityCode = By.cssSelector("input[id*='cvn']");
     private By continueToPlaceOrderButton = By.cssSelector(".button-fancy-large");
     private By email = By.cssSelector("input[id*='emailAddress']");
+    CreditCardModel creditCardModel;
 
     public String cvnnumber;
     public void selectCreditCard() throws InterruptedException {
@@ -54,7 +55,7 @@ public class BillingAddressPage extends PageObject {
     }
 
     public void enterCreditCardDetails1(CreditCardModel creditCardModel){
-
+        this.creditCardModel = creditCardModel;
         waitForExpectedElement(nameOnCard).sendKeys(creditCardModel.getCardName());
         waitForExpectedElement(type).sendKeys(creditCardModel.getType());
         waitForExpectedElement(cardNumber).sendKeys(creditCardModel.getNumber());
