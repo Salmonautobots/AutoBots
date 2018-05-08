@@ -181,7 +181,7 @@
                         </goals>
                         <configuration>
                             <projectName>cucumbertests</projectName>
-                            <outputDirectory>target/cucumber-report/cucumber-html-reports</outputDirectory>
+                            <outputDirectory>target/cucumber-report</outputDirectory>
                             <cucumberOutput>target/cucumber-report/cucumber.json</cucumberOutput>
                             <enableFlashCharts>false</enableFlashCharts>
                         </configuration>
