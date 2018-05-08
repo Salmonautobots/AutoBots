@@ -46,6 +46,7 @@ public class MyAccountsPage extends PageObject {
 
         String randomlastname = RandomGenerator.randomAlphabetic(6);
         newsurname = randomlastname;
+        waitForExpectedElement(lastname).clear();
         waitForExpectedElement(lastname).sendKeys(randomlastname);
         waitForExpectedElement(confirmemail).sendKeys(Props.getProp("existingusername"));
         waitForExpectedElement(password).sendKeys(Props.getProp("existingpassword"));
