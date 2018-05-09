@@ -1,5 +1,5 @@
 @SSP-2 @regression2
-Feature: POC for Salesforce Commerce Cloud
+Feature: As a guest user, I want to register myself so that I should be able to access the site as a registered user
 
   Background:
 		#@AKZON-880
