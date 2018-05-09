@@ -6,6 +6,7 @@ Feature: As a user I want to navigate to the Store Locator link so that I should
     Given the user is on the home page
     And click on menu icon
 
+  @SSP-75 @SSP-81 @SSP-76 @Automation
   Scenario Outline: Search Store
 
     When user chose store locator and search with the Post Code "<postCode>"

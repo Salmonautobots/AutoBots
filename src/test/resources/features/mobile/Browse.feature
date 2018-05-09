@@ -6,8 +6,8 @@ Feature: As a user I want to browse the category and apply the filters so that t
     Given the user is on the home page
     And click on menu icon
 
-  Scenario Outline:  Check if the user is able to navigate to category and apply the filter
-
+  @SSP-87 @SSP-81 @SSP-86 @Automation
+  Scenario Outline: Browse the Main section, categories and apply filters
     When click on the "<section>" section
     And apply the filter "<filter>" filter
     Then the filter should be successfully applied and the matching result should be populated

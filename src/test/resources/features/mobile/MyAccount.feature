@@ -7,6 +7,7 @@ Feature: As a registered user, I want to login and navigate to My Account page s
     And click on menu icon
     And login with an existing credentials
 
+  @SSP-85 @SSP-81 @SSP-84 @Automation
   Scenario Outline: Check if the existing user is able to navigate to My Account section and modifies the personal details section.
 
     When user cliks on "<section>" section from My Account

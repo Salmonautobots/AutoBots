@@ -5,6 +5,7 @@ Feature:  As a user I want to search the product, navigate to PDP page so that I
     Given the user is on the home page
     And click on menu icon
 
+  @SSP-77 @SSP-81 @SSP-72 @Automation
   Scenario Outline: Search a product and add to cart
 
     When I search the product "<product>"

@@ -6,10 +6,9 @@ Feature: As a user, I want to select the goods and make a payment so that the or
     Given the user is on the home page
     And click on menu icon
 
-  @regression
-  Scenario Outline: 1. Purchase a product as a registered user
-
- #     When login with an existing credentials
+	#Login as an existing user and make a purchase.
+  @SSP-89 @SSP-81 @SSP-88 @Automation
+  Scenario Outline: Checkout as an existing user
     When I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
     And navigate to Full Cart page
@@ -23,7 +22,8 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-  @regression
+	#Login as an existing user and make a purchase.
+  @SSP-91 @SSP-81 @SSP-88 @Automation
   Scenario Outline: 2. Purchase a product as a newly registered user during the purchase journey
 
     When I search the product "<product>"
@@ -47,8 +47,8 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-  @regression
-  Scenario Outline: 3. Purchase a product as a guest user
+  @SSP-90 @SSP-81 @SSP-88 @Automation
+  Scenario Outline: Checkout as a guest user
     When I search the product "<product>"
     And add the product to the cart with size "<size>", colour "<colour>" and quantity "<quantity>"
     And navigate to Full Cart page
