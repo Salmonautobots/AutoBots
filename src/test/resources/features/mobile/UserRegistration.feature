@@ -1,12 +1,15 @@
-@regression
-Feature: As a guest user, I want to register myself so that I should be able to access the site as a registered user
+@SSP-2 @regression2
+Feature: POC for Salesforce Commerce Cloud
 
-  Background: This is precondition for all the scenarios in this in feature file
+  Background:
+		#@AKZON-880
     Given the user is on the home page
     And click on menu icon
 
-  Scenario: Register the user by adding the data into mandatory fields
 
+	#When user clicks on icon and selects Register option then after entering the data in the first name, last name, email and valid password, registration is successful
+  @SSP-73 @SSP-81 @SSP-74 @Automation
+  Scenario: User Registration
     When user clicks on user registration icon
     And  user enters the registration details
       | First Name | Last Name | Password    |
