@@ -1,4 +1,4 @@
-@regression
+@regression @SSP-2
 Feature: As a user I want to navigate to the Store Locator link so that I should be able to search
   the nearest stores for the entered post code.
 

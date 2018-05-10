@@ -1,4 +1,4 @@
-@regression
+@regression @SSP-2
 Feature:  As a user I want to search the product, navigate to PDP page so that I can add the product into mini cart
 
   Background: This is precondition for all the scenarios in this in feature file

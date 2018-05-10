@@ -1,4 +1,4 @@
-@regression2
+@regression2 @SSP-2
 Feature: As a user I want to use the search component for words, sentences etc. so that I should be able to see all the contents
   from the website matching the search criteria.
 

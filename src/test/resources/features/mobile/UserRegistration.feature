@@ -1,4 +1,4 @@
-@SSP-2 @regression
+@regression2 @SSP-2
 Feature: As a guest user, I want to register myself so that I should be able to access the site as a registered user
 
   Background:

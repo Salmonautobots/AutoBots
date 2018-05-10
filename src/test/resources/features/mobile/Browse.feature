@@ -1,4 +1,4 @@
-@regression
+@regression @SSP-2
 Feature: As a user I want to browse the category and apply the filters so that the results should be displayed
   as per the searched criteria
 

@@ -1,4 +1,4 @@
-@regression
+@regression @SSP-2
 Feature: As a user, I want to select the goods and make a payment so that the order should be successfully placed
 
   Background: User has to be on the main page and clicked on the menu icon.
@@ -22,7 +22,7 @@ Feature: As a user, I want to select the goods and make a payment so that the or
       | product              | quantity | size | colour |
       | Miko Pullover Hoodie | 2        | M    | Blue   |
 
-	#Login as an existing user and make a purchase.
+	# Create a new user and make a purchase.
   @SSP-91 @SSP-81 @SSP-88 @Automation
   Scenario Outline: 2. Purchase a product as a newly registered user during the purchase journey
 
