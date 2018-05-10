@@ -6,6 +6,7 @@ Feature: As a user I want to use the search component for words, sentences etc. 
     Given the user is on the home page
     And click on menu icon
 
+    # When user enters valid search criteria in the search box and clicks search button then the valid matching records should be displayed on the screen
   @SSP-70 @SSP-81 @SSP-69 @Automation
   Scenario Outline: Search with valid data set
 
@@ -16,6 +17,7 @@ Feature: As a user I want to use the search component for words, sentences etc. 
       | ValidSearchCriteria |
       | Jacket              |
 
+    # When user enters valid search criteria in the search box and clicks search button then the valid matching records should be displayed on the screen
   @SSP-71 @SSP-81 @SSP-69 @Automation
   Scenario Outline: Search with Invalid search data set
 
