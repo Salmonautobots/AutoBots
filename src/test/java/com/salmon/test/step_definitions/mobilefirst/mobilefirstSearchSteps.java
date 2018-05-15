@@ -13,8 +13,8 @@ public class mobilefirstSearchSteps {
         this.mobilefirstHomePage = mobilefirstHomePage;
     }
 
-    @When("^user enters valid search criteria \"([^\"]*)\" in the mobilefirst search field$")
-    public void user_enters_valid_search_criteria_in_the_mobilefirst_search_field(String searchCriteria) throws Exception {
+    @When("^user enters search criteria \"([^\"]*)\" in the mobilefirst search field$")
+    public void user_enters_search_criteria_in_the_mobilefirst_search_field(String searchCriteria) throws Exception {
         mobilefirstHomePage.search(searchCriteria);
     }
 
@@ -29,7 +29,8 @@ public class mobilefirstSearchSteps {
     }
 
     @Then("^the \"([^\"]*)\" should be displayed on the page$")
-    public void the_should_be_displayed_on_the_page(String arg1) throws Exception {
+    public void the_should_be_displayed_on_the_page(String message) throws Exception {
+        Assert.assertEquals(mobilefirstHomePage.message(),message);
 
     }
 

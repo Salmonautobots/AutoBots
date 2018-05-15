@@ -9,19 +9,20 @@ Feature: As a user I want to use the search component for words, sentences etc. 
 
   Scenario Outline: Search with valid data set
 
-    When user enters valid search criteria "<ValidSearchCriteria>" in the mobilefirst search field
+    When user enters search criteria "<searchCriteria>" in the mobilefirst search field
     Then the matching results should be displayed on the page
 
     Examples:
-      | ValidSearchCriteria |
-      | Skirt              |
+      | searchCriteria |
+      | Skirt          |
 
-  Scenario Outline: Search with Invalid search data set
+  Scenario Outline: Search with Inva
+  lid search data set
 
-    When the user searches with invalid key words"<keyword>" in the mobilefirst search field
+    When user enters search criteria "<searchCriteria>" in the mobilefirst search field
     Then the "<message>" should be displayed on the page
 
     Examples:
-      | keyword | message                                              |
-      |         | DID YOU MEAN                                         |
-      | qqqqq   | WE'RE SORRY, NO PRODUCTS WERE FOUND FOR YOUR SEARCH: |
+      | searchCriteria | message                                              |
+      |                | We are sorry, but no results were found for          |
+  #    | qqqqqqq        | We are sorry, but no results were found for:qqqqqqq |
