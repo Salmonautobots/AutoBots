@@ -26,6 +26,7 @@ public class WCS9HomePageSteps {
         Thread.sleep(10000);
     }
 
+
     @When("^user enters search criteria \"([^\"]*)\" in the WCS search field$")
     public void user_enters_search_criteria_in_the_WCS_search_field(String prodname) throws Exception {
 
