@@ -29,8 +29,7 @@ public class UrlBuilder {
     public static void startAtHomePage() throws InterruptedException {
         WebDriverHelper.getWebDriver().manage().deleteAllCookies();
         WebDriverHelper.getWebDriver().navigate().refresh();
-        //WebDriverHelper.getWebDriver().navigate().to((basePath));
-       WebDriverHelper.getWebDriver().navigate().to(("https://www-auth.test.salmon90.com/wcs/shop/en/auroraesite"));
+        WebDriverHelper.getWebDriver().navigate().to((basePath));
 
     }
 

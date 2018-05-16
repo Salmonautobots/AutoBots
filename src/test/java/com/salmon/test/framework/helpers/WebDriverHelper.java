@@ -251,6 +251,10 @@ public class WebDriverHelper extends EventFiringWebDriver {
         capabilities.setCapability("chrome.verbose", false);
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+
+        capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+
         return capabilities;
     }
 

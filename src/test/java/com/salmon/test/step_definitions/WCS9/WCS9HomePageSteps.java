@@ -8,6 +8,7 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class WCS9HomePageSteps {
@@ -23,18 +24,18 @@ public class WCS9HomePageSteps {
     public void user_is_on_the_WCS_home_page() throws Exception {
         UrlBuilder.startAtHomePage();
 
-        Thread.sleep(10000);
+
     }
 
     @When("^user enters search criteria \"([^\"]*)\" in the WCS search field$")
     public void user_enters_search_criteria_in_the_WCS_search_field(String prodname) throws Exception {
-
+        wcs9HomePage.search(prodname);
     }
 
 
     @Then("^the matching results should be displayed on the WCS page$")
     public void the_matching_results_should_be_displayed_on_the_WCS_page() throws Exception {
-
+        Assert.assertTrue(wcs9HomePage.validSearch());
     }
 
 
