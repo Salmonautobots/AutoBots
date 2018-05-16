@@ -37,6 +37,7 @@ public class WCS9HomePage extends PageObject {
         waitForExpectedElement(searchResults);*/
     }
 
+
     public boolean validSearch(){
 
         List<WebElement>searchresult =webDriver.findElements(searchResults);

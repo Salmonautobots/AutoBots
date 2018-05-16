@@ -12,3 +12,4 @@ Feature: As a user I want to see the results for the searched criteria and error
     Examples:
       | searchCriteria |
       | Skirt          |
+
