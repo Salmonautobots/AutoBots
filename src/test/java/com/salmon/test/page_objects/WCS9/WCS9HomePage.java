@@ -15,6 +15,9 @@ public class WCS9HomePage extends PageObject {
     private By search = By.cssSelector("#searchTermWrapper");
     private By searchButton = By.cssSelector(".submitButton");
     private By searchResults = By.cssSelector("a[id*='WC_CatalogEntryDBThumbnailDisplay']");
+    private By linkForSignInAndRegister = By.cssSelector("#Header_GlobalLogin_signInQuickLink");
+    private By signInPanel = By.cssSelector(".panel.signInForm");
+    private By buttonsForSignInAndRegister = By.cssSelector("div[class='button_text']>span:nth-child(1)");
 
     public void search(String searchCriteria) throws InterruptedException {
 
