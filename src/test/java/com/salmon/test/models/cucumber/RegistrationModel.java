@@ -13,10 +13,10 @@ public class RegistrationModel {
     private String firstName;
     private String lastName;
     private String emailAddress;
+    private String confirmEmailAddress;
     private String password;
     private String confirmPassword;
     private String mobileNumber;
     private String errorMsg;
-
 
 }

@@ -1,6 +1,7 @@
 package com.salmon.test.page_objects.mobilefirst;
 
 import com.salmon.test.framework.PageObject;
+import com.salmon.test.framework.helpers.Props;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -20,6 +21,31 @@ public class mobilefirstHomePage extends PageObject {
     private By container = By.cssSelector("nav[role='navigation']");
     private By errormessage = By.cssSelector(".result-count.col>span");
     private By searchKeywords = By.cssSelector(".search-keywords");
+    private By menuIcon = By.cssSelector(".navbar-toggler.d-md-none");
+    private By loginLink = By.xpath(".//*[@id='sg-navbar-collapse']/div/div/nav/div[2]/ul/li[6]/a/span");
+    private By createAccount = By.cssSelector("a[href='#register']");
+    private By containerRegLink = By.cssSelector("div[class='user hidden-md-down']");
+    private By existingUserEmail = By.cssSelector("#login-form-email");
+    private By existingUserPassword = By.cssSelector("#login-form-password");
+    private By existingUserLogin = By.xpath(".//button[contains(text(),'Login')]");
+
+    public void loginWithExistingUser(){
+        waitForExpectedElement(existingUserEmail).sendKeys(Props.getProp("existingusername"));
+        waitForExpectedElement(existingUserPassword).sendKeys(Props.getProp("password"));
+        waitForExpectedElement(existingUserLogin).click();
+    }
+
+    public void clickMenuIcon(){
+        waitForExpectedElement(menuIcon).click();
+    }
+
+    public void clickLoginLink(){
+        waitForExpectedElement(loginLink).click();
+    }
+
+    public void clickCreateAccount(){
+           waitForExpectedElement(createAccount).click();
+    }
 
     public void confirmConsentWindow() throws InterruptedException {
         webDriver.switchTo().defaultContent();
@@ -60,4 +86,6 @@ public class mobilefirstHomePage extends PageObject {
         System.out.println("the message is "+generatedMessage);
         return generatedMessage;
     }
+
+
 }
