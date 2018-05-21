@@ -87,5 +87,13 @@ public class mobilefirstHomePage extends PageObject {
         return generatedMessage;
     }
 
+    public void selectProduct(){
+        waitForExpectedElement(searchResult);
+        List<WebElement>productResult = webDriver.findElements(By.cssSelector("a[class='link']"));
+        for(WebElement prodname:productResult){
+            prodname.click();
+        }
+    }
+
 
 }

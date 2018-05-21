@@ -11,4 +11,5 @@ public class CreditCardModel {
     String expiryMonth;
     String expiryYear;
     String securityCode;
+    String email;
  }
