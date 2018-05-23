@@ -99,7 +99,7 @@ public class AndroidHelper extends EventFiringWebDriver {
 
     private static DesiredCapabilities getAppiumDesiredCapabilities() {
 
-       /* //code to run the mobile test on physical device
+       /* //code to run the DomesticAndGeneral test on physical device
         DesiredCapabilities caps = DesiredCapabilities.android();
         caps.setCapability("appiumVersion", "1.5.2");
         caps.setCapability("deviceName","Samsung Galaxy S6 Device");

@@ -27,11 +27,10 @@ public class UrlBuilder {
     }
 
     public static void startAtHomePage() throws InterruptedException {
+        System.out.println("yash");
         WebDriverHelper.getWebDriver().manage().deleteAllCookies();
         WebDriverHelper.getWebDriver().navigate().refresh();
         WebDriverHelper.getWebDriver().navigate().to((basePath));
-       //WebDriverHelper.getWebDriver().navigate().to(("https://www-auth.test.salmon90.com/wcs/shop/en/auroraesite"));
-
     }
 
     public static void startAtMobileHomePage()

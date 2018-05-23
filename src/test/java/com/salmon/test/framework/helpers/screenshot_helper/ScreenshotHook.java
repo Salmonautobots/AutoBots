@@ -17,7 +17,7 @@ public class ScreenshotHook {
 
     private static final Logger LOG = LoggerFactory.getLogger(ScreenshotHook.class);
 
-    //Not Execute for any api or mobile tests
+    //Not Execute for any api or DomesticAndGeneral tests
    // @After
     public void embedScreenshot(Scenario scenario) {
         try {

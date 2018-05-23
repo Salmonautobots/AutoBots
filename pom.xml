@@ -14,11 +14,9 @@
         <!-- Development environment @ my local machine -->
         <profile>
             <id>dev</id>
-            <!-->
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <-->
+
+            <activation><activeByDefault>true</activeByDefault></activation>
+
             <properties>
                 <profile.path>/profiles/dev/config.properties</profile.path>
                 <testToRun>**/*WebATSuite*.class</testToRun>
@@ -43,29 +41,7 @@
             </properties>
         </profile>
 
-        <!-- Running tests on mobile first environment-->
-        <profile>
-            <id>mobilefirst</id>
-
-         <activation><activeByDefault>true</activeByDefault></activation>
-              <properties>
-                  <profile.path>/profiles/mobilefirst/config.properties</profile.path>
-                  <testToRun>**/*MobileFirstSuite.class</testToRun>
-              </properties>
-      </profile>
-
-      <!-- Running tests on WCS9 environment-->
-        <profile>
-            <id>WCS9</id>
-           <!--> <activation><activeByDefault>true</activeByDefault></activation> <-->
-            <properties>
-                <profile.path>/profiles/WCS9/config.properties</profile.path>
-                <testToRun>**/*RunWCS9ATSuite.class</testToRun>
-            </properties>
-        </profile>
-
-
-        <!-- Running tests on mobile -->
+        <!-- Running tests on DomesticAndGeneral -->
         <profile>
             <id>mobile</id>
             <activation>
